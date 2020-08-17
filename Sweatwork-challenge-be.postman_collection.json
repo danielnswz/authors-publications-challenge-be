@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "86a3af74-a68d-4fb6-b0a8-39e496228d81",
+		"name": "Sweatwork-challenge-be",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Publications",
+			"item": [
+				{
+					"name": "Get all publications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/publications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get authors publications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/publications?author=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get authors publications with search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/publications?author=2&searchTerms=possimus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "2"
+								},
+								{
+									"key": "searchTerms",
+									"value": "possimus"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get publications with search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/publications?searchTerms=possimus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications"
+							],
+							"query": [
+								{
+									"key": "searchTerms",
+									"value": "possimus"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create publication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Haciendo una prueba\",\n    \"body\": \"Estoy haciendo una prueba de creacion de publicaciones.\",\n    \"authorId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/publications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update publication",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Haciendo una prueba\",\n    \"body\": \"Estoy haciendo una prueba de actualizacion de publicaciones.\",\n    \"authorId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/publications/31",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete publication",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/publications/31",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"publications",
+								"31"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Get all authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/authors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Daniel\",\n    \"lastName\": \"Klie\",\n    \"email\": \"danielnswz@gmail.com\",\n    \"birthDate\": \"1992-02-25 00:00:00.000 +00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update author",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Daniel\",\n    \"lastName\": \"Klie\",\n    \"email\": \"danielnswz@gmail.com\",\n    \"birthDate\": \"2020-08-17 00:00:00.000 +00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authors/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete author",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authors/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "5b31f9cf-fe84-44ce-b20e-2495a9c4fb01",
+			"key": "url",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
