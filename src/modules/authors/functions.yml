@@ -1,0 +1,35 @@
+functions:
+  create-author:
+    handler: src/modules/authors/handlers/index.createAuthor
+    events:
+      - http:
+          path: authors
+          method: post
+
+  get-one-author:
+    handler: src/modules/authors/handlers/index.getAuthor
+    events:
+      - http:
+          path: authors/{id}
+          method: get
+
+  get-all-authors:
+    handler: src/modules/authors/handlers/index.getAuthors
+    events:
+      - http:
+          path: authors
+          method: get
+
+  update-author:
+    handler: src/modules/authors/handlers/index.updateAuthor
+    events:
+      - http:
+          path: authors/{id}
+          method: put
+
+  delete-author:
+    handler: src/modules/authors/handlers/index.deleteAuthor
+    events:
+      - http:
+          path: authors/{id}
+          method: delete

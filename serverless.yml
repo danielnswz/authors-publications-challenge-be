@@ -1,0 +1,32 @@
+service: backend-test
+
+#tenant:
+#app:
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  profile: default
+  stage: dev
+  region: us-east-2
+  timeout: 15
+
+custom:
+  warmup:
+    enabled: true
+    prewarm: true
+
+  serverless-offline:
+    useChildProcesses: true
+
+functions:
+  - ${file(src/modules/authors/functions.yml):functions}
+  - ${file(src/modules/publications/functions.yml):functions}
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-warmup
+  - serverless-dotenv-plugin

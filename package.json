@@ -1,0 +1,63 @@
+{
+	"name": "sweatworks-challenge-be",
+	"version": "1.0.1",
+	"main": "src/handler.js",
+	"license": "MIT",
+	"scripts": {
+		"deploy:env": "sls deploy --stage $NODE_ENV",
+		"deploy": "export NODE_ENV=dev && yarn deploy:env",
+		"deploy:production": "export NODE_ENV=production && yarn deploy:env",
+		"deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
+		"lint": "eslint src --ext ts,js --no-ignore --fix",
+		"precommit": "lint-staged",
+		"start": "serverless offline start --env",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"build": "serverless webpack",
+		"db:create": "node_modules/.bin/sequelize db:create --env",
+		"db:migrate": "node_modules/.bin/sequelize db:migrate --env",
+		"db:seed": "node_modules/.bin/sequelize db:seed:all --env",
+		"db:create-migration": "node_modules/.bin/sequelize migration:generate --name",
+		"db:create-seed": "node_modules/.bin/sequelize seed:generate --name",
+		"db:migrate:undo:all": "node_modules/.bin/sequelize db:migrate:undo:all --env"
+	},
+	"devDependencies": {
+		"eslint": "^7.7.0",
+		"eslint-config-airbnb": "^18.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.14.0",
+		"husky": "^4.2.5",
+		"jest": "^26.4.0",
+		"lint-staged": "^10.2.11",
+		"prettier": "^2.0.5",
+		"serverless": "^1.40.0",
+		"serverless-dotenv-plugin": "^3.0.0",
+		"serverless-offline": "^6.5.0",
+		"serverless-plugin-warmup": "^4.5.3-rc.1"
+	},
+	"dependencies": {
+		"@types/aws-lambda": "^8.10.15",
+		"@types/node": "^14.0.27",
+		"aws-sdk": "^2.488.0",
+		"casual": "^1.6.2",
+		"debug": "^4.1.1",
+		"dotenv": "^8.0.0",
+		"mysql2": "^2.1.0",
+		"pg": "^8.3.0",
+		"pg-hstore": "^2.3.3",
+		"sequelize": "^6.3.4",
+		"sequelize-cli": "^6.2.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"src/**/*.{js}": [
+			"yarn lint",
+			"prettier --write",
+			"git add"
+		]
+	}
+}

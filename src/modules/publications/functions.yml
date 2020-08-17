@@ -1,0 +1,35 @@
+functions:
+  create-publication:
+    handler: src/modules/publications/handlers/index.createPublication
+    events:
+      - http:
+          path: publications
+          method: post
+
+  get-one-publication:
+    handler: src/modules/publications/handlers/index.getPublication
+    events:
+      - http:
+          path: publications/{id}
+          method: get
+
+  get-all-publications:
+    handler: src/modules/publications/handlers/index.getPublications
+    events:
+      - http:
+          path: publications
+          method: get
+
+  update-publication:
+    handler: src/modules/publications/handlers/index.updatePublication
+    events:
+      - http:
+          path: publications/{id}
+          method: put
+
+  delete-publication:
+    handler: src/modules/publications/handlers/index.deletePublication
+    events:
+      - http:
+          path: publications/{id}
+          method: delete
