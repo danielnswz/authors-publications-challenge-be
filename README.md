@@ -11,7 +11,7 @@ Author: Daniel Klie
 
 ```bash
 git clone https://github.com/danielnswz/sweatworks-challenge-be.git
-
+```
 
 # Install dependencies
 
