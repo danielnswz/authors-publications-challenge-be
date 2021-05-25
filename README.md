@@ -1,4 +1,4 @@
-# Sweatworks Challenge - Backend
+# Authors-Publications Challenge - Backend
 
 Serverless BE, Sequelize
 
@@ -10,7 +10,7 @@ Author: Daniel Klie
 # Clone this project by tipying
 
 ```bash
-git clone https://github.com/danielnswz/sweatworks-challenge-be.git
+git clone https://github.com/danielnswz/authors-publications-challenge-be.git
 ```
 
 # Install dependencies
